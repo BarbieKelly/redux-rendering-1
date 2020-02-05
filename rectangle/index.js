@@ -12,13 +12,43 @@ const width = document.getElementById('width');
 const red = document.getElementById('red');
 const blue = document.getElementById('blue');
 
+const currentRectangle = document.getElementById('rectangleContainer');
+
 height.addEventListener('click', (e) => {
     e.preventDefault();
+    var rectangleHeight = parseInt(currentRectangle.childNodes[1].style.height.slice(0,3));
     dispatch ({
         type: 'INCREMENT_HEIGHT',
-        height: height
+        height: rectangleHeight + 10
     })
 })
+
+width.addEventListener('click', (e) => {
+    e.preventDefault();
+    var rectangleWidth = parseInt(currentRectangle.childNodes[1].style.width.slice(0,3));
+    dispatch ({
+        type: 'INCREMENT_WIDTH',
+        width: rectangleWidth + 10
+    })
+})
+red.addEventListener('click', (e) => {
+    e.preventDefault();
+    dispatch ({
+        type: 'CHANGE_COLOR',
+        color: '#F00'
+    })
+})
+
+blue.addEventListener('click', (e) => {
+    e.preventDefault();
+    dispatch ({
+        type: 'CHANGE_COLOR',
+        color: '#00F'
+    })
+})
+
+
+
 
 // case 'INCREMENT_HEIGHT':
 // case 'INCREMENT_WIDTH':

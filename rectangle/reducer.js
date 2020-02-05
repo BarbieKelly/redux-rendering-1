@@ -22,7 +22,7 @@ const reducer = (state = initialState, action) => {
                 width: action.width
             }
             break;
-        // ACTION 3 - Change the color
+        // // ACTION 3 - Change the color
         case 'CHANGE_COLOR':
             return {
                 ...state,
