@@ -11,4 +11,9 @@ const form = document.getElementById('nameForm');
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
+    const newName = form.elements['name'].value;
+    dispatch ({
+        type: 'ADD_NAME',
+        name: newName
+    })
 })
